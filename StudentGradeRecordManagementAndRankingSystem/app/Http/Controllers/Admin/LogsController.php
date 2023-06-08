@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class LogsController extends Controller
 {
     public function maincontent(){
-        return view('admin.users_logs', ["msg"=>"This is report page"]);
+        return view('admin.users_logs', ["mssg"=>"This is report page"]);
     }
 }
