@@ -31,7 +31,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                VSUVSU Integrated High School is located at the lower part of the Visayas State University, Visca, Baybay City Leyte.
+                                VSU Integrated High School is located at the lower part of the Visayas State University, Visca, Baybay City Leyte.
                                 Former names are as follows; Experimental Rural High School (ERHS), Visca Laboratory High School (VLHS),
                                 Leyte State University Laboratory High School (LSULHS), VSU Laboratory High School (VSU-LHS).
                                 </div>
