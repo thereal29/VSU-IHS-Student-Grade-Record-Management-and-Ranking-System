@@ -1,6 +1,17 @@
 
 body {
     font-family: 'Nunito', sans-serif;
+    
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
 }
 h2{
     padding-top: 15px;
@@ -258,18 +269,20 @@ padding: 10px;
     0 10px 14px -1px rgb(0 0 0 / 30%), 
     0 7px 10px 0 rgb(0 0 0 / 12%);
     }
-
 .card {
     border: 0;
     margin-bottom: 30px;
     border-radius: 6px;
     color: #05300e;
     background: #fff;
+    min-width: 100%;
     box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 
     0 10px 14px -1px rgb(0 0 0 / 30%), 
     0 7px 10px 0 rgb(0 0 0 / 12%);
     height: 100%;
+
 }
+
 .card-profile {
     border: 0;
     margin-bottom: 30px;
@@ -323,7 +336,7 @@ padding: 10px;
 }
 
 .card .row{
-    margin-left: 10px;
-    width: 95%;
+    margin-left: 0;
+    width: 100%;
     transition: all 0.5s ease; 
 }

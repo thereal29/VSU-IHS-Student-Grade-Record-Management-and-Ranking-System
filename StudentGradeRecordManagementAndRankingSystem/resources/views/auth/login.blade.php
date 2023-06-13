@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center py-5">
-        <div class="col-md-4">
-            <div class="card">
+<div class="wrapper py-5" style="display:flex; justify-content:center;">
+            <div class="card m-0" style="max-width:100%;">
                 <div class="card-header"style="background:#05300e; color:#fff; font-weight:bold; text-align:center; padding:15px; font-size:25px;">{{ __('Welcome to VSU-IHS') }}</div>
 
                 <div class="card-body">
@@ -67,7 +65,5 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 @endsection

@@ -18,7 +18,7 @@
                                     <!-- <button type="button" class="float-right" id="newstudent" data-bs-toggle="modal" data-bs-target="#addStudentModal"><i class="fa fa-plus"></i> New Students</button> -->
                                 </div>
                             </div>
-                            <table class="table table-bordered table-striped ">
+                            <table id="example" class="table table-bordered table-striped display responsive nowrap" style="width:100%">
                                 <thead id="column_name">
                                     <tr>
                                         <th style="font-size:14px; font-weight:bold; text-align:center;">Report ID</th>

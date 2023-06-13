@@ -18,11 +18,11 @@
                                 <!-- <button type="button" class="float-right" id="newstudent" data-bs-toggle="modal" data-bs-target="#addStudentModal"><i class="fa fa-plus"></i> New Students</button> -->
                             </div>
                         </div>
-                        <table class="table table-bordered table-striped ">
+                        <table id="example" class="table table-bordered table-striped display responsive nowrap" style="width:100%">
                             <thead id="column_name">
                                 <tr>
-                                    <th style="font-size:14px; font-weight:bold; text-align:center;">Name</th>
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">LRN Number</th>
+                                    <th style="font-size:14px; font-weight:bold; text-align:center;">Full Name</th>
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Grade Level</th>
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Section</th>
 
@@ -30,8 +30,8 @@
                             </thead>
                             <tbody id="row_data">
                                 <tr>
-                                    <td style="width: 45%"></td>
-                                    <td style="width: 25%"></td>
+                                    <td style="width: 15%"></td>
+                                    <td style="width: 35%"></td>
                                     <td style="width: 15%"></td>
                                     <td style="width: 15%"></td>
                                     <!-- <td class="action" style="width: 20%">
