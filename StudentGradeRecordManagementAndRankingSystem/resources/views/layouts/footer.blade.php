@@ -135,4 +135,38 @@
     });
 } );
 </script>
+<!-- <script>
+  $(document).ready(function(){
+    $("#roles").on('change', function(){
+      var role = $(this).val();
+      $.ajax({
+        url:"{{ route('admin.users_list') }}",
+        type:"GET",
+        data:{'role':role},
+        success:function(data){
+          alert(data);
+          // var users = data.users;
+          // var html = '';
+          // if(users.length > 0 ){
+          //   for(let i = 0; i<users.length; i++){
+          //     html += '<tr>\
+          //             <td>'+(i+1)+'</td>\
+          //             <td>'+users[i]['username']+'</td>\
+          //             <td>'+users[i]['username']+'</td>\
+          //             <td>'+users[i]['username']+'</td>\
+          //             <td>'+users[i]['username']+'</td>\
+          //             </tr>';
+          //   }
+          // }
+          // else{
+          //   html += '<tr>\
+          //             <td>No Users Found</td>\
+          //             </tr>';
+          // }
+          // ("#tbody").html(html);
+        }
+      });
+    });
+  });
+</script> -->
   @yield('scripts')

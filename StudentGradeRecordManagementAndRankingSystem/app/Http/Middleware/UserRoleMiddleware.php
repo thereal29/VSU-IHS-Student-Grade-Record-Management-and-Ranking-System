@@ -20,6 +20,6 @@ class UserRoleMiddleware
         {
             return $next($request);
         }
-        return response()->json(["You Don't have pwemission to access this page."]);
+        return response()->json(["You Don't have permission to access this page."]);
     }
 }

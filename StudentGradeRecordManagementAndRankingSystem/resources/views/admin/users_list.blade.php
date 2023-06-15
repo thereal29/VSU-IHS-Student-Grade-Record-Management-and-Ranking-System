@@ -7,7 +7,25 @@
     </br>
     <div class="card">
         <div class="card-header">
-            <strong><i class="bx bx-data"></i>List of System Users</strong>
+            <form action="" method="get">
+                <div class="row d-flex">
+                    <div class="col-md-6">
+                        <strong><i class="bx bx-data"></i>List of System Users</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="role" id="roles" class="form-select d-flex">
+                            <option value="">Select User Roles</option>
+                            @if(count($roles) > 0)
+                                @foreach($roles as $role)
+                                    <option value="{{ $role['id'] }}" {{Request::get('role') == $role['id'] ? 'selected' : ''}}> {{$role->description}}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                        <button type="submit" class="btn btn-primary" style="float:right; background:#05300e; color:#fff;">Filter</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
         </div>
         <div class="card-body col-md-12">
             <div class="row">
@@ -26,12 +44,12 @@
                         <th style="font-size:14px; font-weight:bold; text-align:center;">Actions</th>
                     </tr>
                 </thead>
-                <tbody id="row_data">
+                <tbody id="tbody">
                     @foreach ($users as $user)
                     <tr>
                         <td style="width: 5%">{{$user->id}}</td>
                         <td style="width: 30%">{{$user->username}}</td>
-                        <td style="width: 15%">{{$user->username}}</td>
+                        <td style="width: 15%">{{$user->role}}</td>
                         <td style="width: 30%">{{$user->username}}</td>
                         <td style="width: 10%">{{$user->username}}</td>
                         <!-- <td class="action" style="width: 20%">

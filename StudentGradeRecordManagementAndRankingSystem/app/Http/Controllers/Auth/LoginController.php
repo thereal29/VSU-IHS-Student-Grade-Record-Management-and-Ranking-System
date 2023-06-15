@@ -50,9 +50,9 @@ class LoginController extends Controller
             'password' => 'required|min:8',
         ]);
         if(auth()->attempt(['username'=>$input["username"], 'password'=>$input["password"]])){
-            if(auth()->user()->role == 'admin'){
+            if(auth()->user()->role == 'Administrator'){
                 return redirect()->route('admin.dashboard')->with('alert-success', 'You are now logged in.');// this route is for the System Administrator
-            }else if(auth()->user()->role == 'committee'){
+            }else if(auth()->user()->role == 'Honors and Awards Committee'){
                 return redirect()->route('honors_committee.dashboard')->with('alert-success', 'You are now logged in.');// this route is for the Honors and Awards Committee
             }else if(auth()->user()->role == 'facilitator'){
                 return redirect()->route('guidance_facilitator.dashboard')->with('alert-success', 'You are now logged in.');// this route is for the Guidance Facilitator
@@ -69,7 +69,7 @@ class LoginController extends Controller
             }else if(auth()->user()->role == 'stud4'){
                 return redirect()->route('gradSHS.dashboard')->with('alert-success', 'You are now logged in.');// this route is for the Graduating Senior High School and qualified for honors
             }else{
-                return redirect()->route('/home');
+                return redirect()->route('/');
             }
         }
         else{

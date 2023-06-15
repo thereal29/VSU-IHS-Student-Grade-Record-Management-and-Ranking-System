@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Roles;
 
 class User extends Authenticatable
 {
@@ -46,9 +49,11 @@ class User extends Authenticatable
     ];
 
     protected function role(): Attribute
-    {
+    {  // $roles = Roles::select('description')->get();
+        $roles = DB::table('user_roles')->pluck('description');
+      //  dd($roles->all());
         return new Attribute(
-            get:fn($value) => ['', 'admin', 'committe', 'facilitator', 'adviser', 'subjteacher', 'stud1', 'stud2', 'stud3', 'stud4'][$value],
+            get:fn($value) => ['', $roles[0], $roles[1], $roles[2], $roles[3], $roles[4], $roles[5], $roles[6], $roles[7]][$value],
         );
     }
     public function getAdmin(){
