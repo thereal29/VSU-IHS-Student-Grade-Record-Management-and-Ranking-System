@@ -24,6 +24,12 @@
               <p>Academic Records</p>
             </a>
           </li>
+          <li class="{{ 'admin/curriculum' == request()->path() ? 'active' : ''}}">
+            <a href="/admin/curriculum">
+              <i class="bx bxs-file"></i>
+              <p>Curriculum</p>
+            </a>
+          </li>
           <li class="{{ 'admin/report' == request()->path() ? 'active' : ''}}">
             <a href="/admin/report">
               <i class="bx bxs-report"></i>
