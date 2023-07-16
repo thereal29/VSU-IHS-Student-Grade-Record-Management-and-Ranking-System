@@ -12,15 +12,22 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <strong><i class="bx bx-data"></i>List of Curriculum</strong>
+                                    <strong><i class="bx bx-data"></i>List of System Users</strong>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary" style="float:left; background:#05300e; color:#fff;">Add New Curriculum</button>
+                                <div class="dropdown">
+                                <button type="button"  class="btn btn-primary" style="background:#05300e; color:#fff;">Register New User</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Pending Accounts</a>
+                                        <a href="#" data-toggle="modal" data-target="#registerStudent">Student</a>
+                                        <a href="#" data-toggle="modal" data-target="#registerFaculty">Faculty/Staff</a>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
                     <div class="col-md-6">
-                        <div class="row">\
+                        <div class="row">
                             <div class="col-md-12">
                         <select name="role" id="roles" class="form-select d-flex">
                             <option value="">Select User Roles</option>
@@ -78,3 +85,4 @@
 @section('pagetitle')
     <a class="navbar-brand" href="#pablo">User List</a>
 @endsection
+@include('admin.modal')

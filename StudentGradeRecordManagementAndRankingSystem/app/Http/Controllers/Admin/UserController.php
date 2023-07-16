@@ -19,7 +19,7 @@ class UserController extends Controller
         $users = User::when($request->role != null, function ($q) use ($request){
             return $q->where('role', $request->role);
         })
-        ->paginate(10);
+        ->paginate(10);     
 
         // if($request->ajax()){
         //    $users = $query->where(['role'=>$request->roles])->get();

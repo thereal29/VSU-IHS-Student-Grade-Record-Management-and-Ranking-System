@@ -9,7 +9,7 @@
                 </br>
                 <div class="card">
                     <div class="card-header">
-                        <form action="" method="get">
+                        
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
@@ -17,7 +17,7 @@
                                     <strong><i class="bx bx-data"></i>List of Curriculum</strong>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary" style="float:left; background:#05300e; color:#fff;">Add New Curriculum</button>
+                                    <button type="button" class="btn btn-primary" style="float:left; background:#05300e; color:#fff;" data-bs-toggle="modal" data-bs-target="#addnewcurriculum">Add New Curriculum</button>
                                 </div>
                             </div>
                         </div>
@@ -27,8 +27,10 @@
                                     <strong>By Grade Level:</strong>
                                 </div>
                                 <div class="col-md-9">
+                                <form action="" method="get">
                                     <select name="gradelevel" id="gradelevel" class="form-select d-flex">
                                         <option value="">Show all Curriculum</option>
+                                        <!-- <option value="">No Enrolled Students</option> -->
                                         <option value="Grade 7" {{Request::get('gradelevel') == 'Grade 7' ? 'selected' : ''}}> Grade 7</option>
                                         <option value="Grade 8" {{Request::get('gradelevel') == 'Grade 8' ? 'selected' : ''}}> Grade 8</option>
                                         <option value="Grade 9" {{Request::get('gradelevel') == 'Grade 9' ? 'selected' : ''}}> Grade 9</option>
@@ -38,10 +40,11 @@
                                     </select>
                                     <button type="submit" class="btn btn-primary" style="float:right; background:#05300e; color:#fff;">Filter</button>
                                 </div>
+                                
+                    </form>
                             </div>
                         </div>
                     </div>
-                    </form>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -52,20 +55,28 @@
                         </div>
                         <table id="example" class="table table-bordered table-striped display responsive nowrap" style="width:100%">
                             <thead id="column_name">
-                                <tr>
+                              
+                            <tr>
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Subject ID</th>
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Course Description</th>
+                                   
+                                        @if($flag != null && 'None')
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Students Enrolled</th>
+                                        @endif
+                                    
                                     <th style="font-size:14px; font-weight:bold; text-align:center;">Action</th>
 
                                 </tr>
+                                
                             </thead>
                             <tbody id="row_data">
                                 @foreach ($subjects as $subject)
                                 <tr>
                                     <td style="width: 15%">{{$subject->id}}</td>
                                     <td style="width: 35%">{{$subject->subject_name}}</td>
-                                    <td style="width: 15%">{{$subject->totalstudents}}</td>
+                                    @if($flag != null && 'None')
+                                        <td style="width: 15%">{{$subject->totalstudents}}</td>
+                                    @endif
                                     <td style="width: 15%"></td>
                                     <!-- <td class="action" style="width: 20%">
                                     <button type="button" class="" id="viewprofile" data-bs-toggle="modal" data-bs-target=""> View Profile</button>
@@ -84,3 +95,4 @@
 @section('pagetitle')
     <a class="navbar-brand" href="#pablo">Curriculum Record</a>
 @endsection
+@include('admin.modal')

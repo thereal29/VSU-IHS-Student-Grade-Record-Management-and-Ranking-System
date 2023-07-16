@@ -9,6 +9,7 @@ class Curriculum extends Model
 {
     use HasFactory;
     protected $table = 'subject';
+    public $timestamps = false;
     protected $fillable = [
         'id',
         'subject_name',
