@@ -54,7 +54,7 @@
             <table id="example" class="table table-bordered table-striped display responsive nowrap" style="width:100%">
                 <thead id="column_name">
                     <tr>
-                        <th style="font-size:14px; font-weight:bold; text-align:center;">User Number</th>
+                        <th style="font-size:14px; font-weight:bold; text-align:center;">#</th>
                         <th style="font-size:14px; font-weight:bold; text-align:center;">Name</th>
                         <th style="font-size:14px; font-weight:bold; text-align:center;">Username</th>
                         <th style="font-size:14px; font-weight:bold; text-align:center;">Email Address</th>
@@ -64,10 +64,10 @@
                 <tbody id="tbody">
                     @foreach ($users as $user)
                     <tr>
-                        <td style="width: 5%">{{$user->id}}</td>
-                        <td style="width: 30%">{{$user->username}}</td>
-                        <td style="width: 15%">{{$user->role}}</td>
-                        <td style="width: 30%">{{$user->username}}</td>
+                        <td style="width: 5%">{{$user->ctr}}</td>
+                        <td style="width: 30%">{{$user->lname}}, {{$user->fname}} {{$user->minit}}. </td>
+                        <td style="width: 15%">{{$user->username}}</td>
+                        <td style="width: 30%">{{$user->email}}</td>
                         <td style="width: 10%">{{$user->username}}</td>
                         <!-- <td class="action" style="width: 20%">
                         <button type="button" class="" id="viewprofile" data-bs-toggle="modal" data-bs-target=""> View Profile</button>

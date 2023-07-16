@@ -37,3 +37,9 @@ Route::middleware(['auth', 'user-role:Administrator'])->group(function()
    // Route::get('/admin/filter', 'App\Http\Controllers\Admin\UserController@filterRoles')->name('admin.filter');
     
 });
+//NON-GRADUATING JUNIOR HIGH SCHOOL STUDENTS ROUTES
+Route::middleware(['auth', 'user-role:Non-graduating Junior High School'])->group(function()
+{
+    Route::get('/stud1/dashboard', 'App\Http\Controllers\Stud1\DashboardController@index')->name('stud1.dashboard');
+    Route::get('/stud1/profile', 'App\Http\Controllers\Stud1\ProfileController@index')->name('stud1.profile');
+});

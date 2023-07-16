@@ -1,0 +1,1 @@
+@extends('stud1.navigation')
